@@ -30,5 +30,9 @@ public class CasaModel {
     @Column(name = "Valor_do_aluguel")
     private double valorAluguel;
 
+    @Column(name = "img_casa")
+    private String imgCasa;
+
+
 
 }
