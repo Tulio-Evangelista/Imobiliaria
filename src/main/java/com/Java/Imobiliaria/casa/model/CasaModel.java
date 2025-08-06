@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CasaModel {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,6 +34,7 @@ public class CasaModel {
     @Column(name = "img_casa")
     private String imgCasa;
 
-
-
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
