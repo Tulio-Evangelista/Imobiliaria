@@ -4,6 +4,7 @@ package com.Java.Imobiliaria.apartamento.service;
 import com.Java.Imobiliaria.apartamento.model.ApartamentoModel;
 import com.Java.Imobiliaria.apartamento.repository.ApartamentoRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -34,6 +35,17 @@ public class ApartamentoService {
     public List<ApartamentoModel> listarApartamento() {
         return apartamentoRepository.findAll();
     }
+
+
+    public List<ApartamentoModel> listarApartamentosPorValorAluguel(@RequestParam Integer valorAluguelMin,@RequestParam Integer valorAluguelMax) {
+        if (apartamentoRepository.buscaValorAluguel(valorAluguelMin, valorAluguelMax) != null){
+           return apartamentoRepository.buscaValorAluguel(valorAluguelMin, valorAluguelMax);
+        }else{
+            System.out.println("Nenhum apartamento encontrado com o valor especificado!");
+            return null;
+        }
+    }
+
 
     public void deletarApartamentoPorId(Long id) {
         if (apartamentoRepository.existsById(id)) {

@@ -29,10 +29,10 @@ public class ApartamentoModel {
     private Integer numeroDeQuartos;
 
     @Column(name = "Valor_do_aluguel", nullable = true)
-    private String valorAluguel;
+    private Integer valorAluguel;
 
     @Column(name = "Valor_do_condominio", nullable = true)
-    private String valorCondominio;
+    private Integer valorCondominio;
 
     @Column(name = "img_apartamento", nullable = true)
     private String imgApartamento;
@@ -48,11 +48,11 @@ public class ApartamentoModel {
         return id;
     }
 
-    public String getValorAluguel() {
+    public Integer getValorAluguel() {
         return valorAluguel;
     }
 
-    public void setValorAluguel(String valorAluguel) {
+    public void setValorAluguel(Integer valorAluguel) {
         this.valorAluguel = valorAluguel;
     }
 
@@ -72,11 +72,11 @@ public class ApartamentoModel {
         this.numeroDeQuartos = numeroDeQuartos;
     }
 
-    public String getValorCondominio() {
+    public Integer getValorCondominio() {
         return valorCondominio;
     }
 
-    public void setValorCondominio(String valorCondominio) {
+    public void setValorCondominio(Integer valorCondominio) {
         this.valorCondominio = valorCondominio;
     }
 

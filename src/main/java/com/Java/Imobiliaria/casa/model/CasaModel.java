@@ -29,12 +29,48 @@ public class CasaModel {
     private int quantidadeDeQuartos;
 
     @Column(name = "Valor_do_aluguel")
-    private double valorAluguel;
+    private Integer valorAluguel;
 
     @Column(name = "img_casa")
     private String imgCasa;
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public int getQuantidadeDeQuartos() {
+        return quantidadeDeQuartos;
+    }
+
+    public void setQuantidadeDeQuartos(int quantidadeDeQuartos) {
+        this.quantidadeDeQuartos = quantidadeDeQuartos;
+    }
+
+    public String getImgCasa() {
+        return imgCasa;
+    }
+
+    public void setImgCasa(String imgCasa) {
+        this.imgCasa = imgCasa;
+    }
+
+    public Integer getValorAluguel() {
+        return valorAluguel;
+    }
+
+    public void setValorAluguel(Integer valorAluguel) {
+        this.valorAluguel = valorAluguel;
     }
 }

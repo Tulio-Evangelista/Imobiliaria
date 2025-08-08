@@ -67,3 +67,6 @@ INSERT INTO TB_APARTAMENTO(aceita_pet,cidade,numero_de_quartos) VALUES(true,assi
 2025-08-06 02:30:55.498503-03:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_APARTAMENTOS" not found; SQL statement:
 INSERT INTO TB_APARTAMENTOS(cidade,aceita_pet) VALUES('teste', true) [42102-232]
+2025-08-08 02:57:24.304568-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_CASA(cidade, quantidade_de_quartos, valor_do_aluguel) VALUES( 'assis', 2 ,2500,[*])"; expected "DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO TB_CASA(cidade, quantidade_de_quartos, valor_do_aluguel) VALUES( 'assis', 2 ,2500,) [42001-232]
