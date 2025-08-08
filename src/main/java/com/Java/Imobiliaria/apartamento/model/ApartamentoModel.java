@@ -1,10 +1,16 @@
 package com.Java.Imobiliaria.apartamento.model;
 
 
+import com.Java.Imobiliaria.apartamento.enums.StatusImovel;
+import com.Java.Imobiliaria.clientes.model.ClientesModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,6 +45,17 @@ public class ApartamentoModel {
 
     @Column(name = "Aceita_pet", nullable = true)
     private Boolean aceitaPet;
+
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_imovel")
+    private StatusImovel statusImovel;
+
+    // Apartamento pode ser alugado por um cliente
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = true)
+    private ClientesModel cliente;
+
 
     public void setId(Long id) {
         this.id = id;
