@@ -6,9 +6,10 @@ import com.Java.Imobiliaria.casa.repository.CasaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
+import static com.fasterxml.jackson.databind.type.LogicalType.Collection;
 
 @Service
 public class CasaService {
@@ -46,7 +47,7 @@ public class CasaService {
             return lista;
         } else {
              System.out.println("Nenhuma casa encontrada nesse intervalo de valor de aluguel!");
-            return Collections.emptyList();
+            return null;
         }
 
     }
