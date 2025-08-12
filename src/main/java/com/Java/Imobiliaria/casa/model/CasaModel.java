@@ -1,6 +1,6 @@
 package com.Java.Imobiliaria.casa.model;
 
-import com.Java.Imobiliaria.casa.enums.StatusImovel;
+import com.Java.Imobiliaria.casa.enums.StatusCasa;
 import com.Java.Imobiliaria.clientes.model.ClientesModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,12 +43,28 @@ public class CasaModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_imovel")
-    private StatusImovel statusImovel;
+    private StatusCasa statusCasa;
 
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = true)
     private ClientesModel cliente;
+
+    public StatusCasa getStatusCasa() {
+        return statusCasa;
+    }
+
+    public void setStatusCasa(StatusCasa statusCasa) {
+        this.statusCasa = statusCasa;
+    }
+
+    public ClientesModel getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClientesModel cliente) {
+        this.cliente = cliente;
+    }
 
     public void setId(Long id) {
         this.id = id;

@@ -1,6 +1,6 @@
 package com.Java.Imobiliaria.casa.enums;
 
-public enum StatusImovel {
+public enum StatusCasa {
     DISPONIVEL,
     ALUGADO,
     VENDIDO,

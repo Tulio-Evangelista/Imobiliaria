@@ -1,7 +1,7 @@
 package com.Java.Imobiliaria.apartamento.model;
 
 
-import com.Java.Imobiliaria.apartamento.enums.StatusImovel;
+import com.Java.Imobiliaria.apartamento.enums.StatusApartamento;
 import com.Java.Imobiliaria.clientes.model.ClientesModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -49,13 +49,29 @@ public class ApartamentoModel {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_imovel")
-    private StatusImovel statusImovel;
+    private StatusApartamento statusApartamento;
 
     // Apartamento pode ser alugado por um cliente
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = true)
     private ClientesModel cliente;
 
+
+    public StatusApartamento getStatusApartamento() {
+        return statusApartamento;
+    }
+
+    public void setStatusApartamento(StatusApartamento statusApartamento) {
+        this.statusApartamento = statusApartamento;
+    }
+
+    public ClientesModel getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClientesModel cliente) {
+        this.cliente = cliente;
+    }
 
     public void setId(Long id) {
         this.id = id;

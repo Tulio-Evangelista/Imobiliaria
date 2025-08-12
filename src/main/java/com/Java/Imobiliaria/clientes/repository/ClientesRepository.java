@@ -4,10 +4,14 @@ import com.Java.Imobiliaria.clientes.model.ClientesModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Set;
+
 @Repository
 public interface ClientesRepository extends JpaRepository<ClientesModel, Long> {
 
-    // Métodos adicionais de consulta podem ser definidos aqui, se necessário.
-    // Por exemplo, encontrar clientes por nome, email, etc.
-    // Exemplo: List<ClientesModel> findByNome(String nome);
+
+
+
+
 }

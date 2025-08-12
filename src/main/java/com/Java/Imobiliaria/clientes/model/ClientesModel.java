@@ -2,6 +2,7 @@ package com.Java.Imobiliaria.clientes.model;
 
 import com.Java.Imobiliaria.casa.model.CasaModel;
 import com.Java.Imobiliaria.clientes.enums.StatusCliente;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -43,11 +44,63 @@ public class ClientesModel {
 
     //clientes podem alugar várias casas
     @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     private List<CasaModel> casasAlugadas;
 
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public StatusCliente getStatusCliente() {
+        return statusCliente;
+    }
+
+    public void setStatusCliente(StatusCliente statusCliente) {
+        this.statusCliente = statusCliente;
+    }
+
+    public List<CasaModel> getCasasAlugadas() {
+        return casasAlugadas;
+    }
+
+    public void setCasasAlugadas(List<CasaModel> casasAlugadas) {
+        this.casasAlugadas = casasAlugadas;
+    }
 }

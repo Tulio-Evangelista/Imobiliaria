@@ -1,5 +1,6 @@
 package com.Java.Imobiliaria.apartamento.repository;
 
+import com.Java.Imobiliaria.apartamento.enums.StatusApartamento;
 import com.Java.Imobiliaria.apartamento.model.ApartamentoModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +17,6 @@ public interface ApartamentoRepository extends JpaRepository<ApartamentoModel, L
     List<ApartamentoModel> buscaValorAluguel(@Param("min") Integer valorAluguelMin, @Param("max") Integer valorAluguelMax);
 
     boolean existsByAceitaPet(Boolean aceitaPet);
+
+    List<ApartamentoModel> findByStatusApartamento(StatusApartamento statusApartamento);
 }

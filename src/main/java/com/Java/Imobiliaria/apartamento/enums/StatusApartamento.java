@@ -1,6 +1,6 @@
 package com.Java.Imobiliaria.apartamento.enums;
 
-public enum StatusImovel {
+public enum StatusApartamento {
     DISPONIVEL,
     ALUGADO,
     VENDIDO,
