@@ -1,5 +1,6 @@
 package com.Java.Imobiliaria.apartamento.controller;
 
+import com.Java.Imobiliaria.apartamento.dto.ApartamentoDTO;
 import com.Java.Imobiliaria.apartamento.model.ApartamentoModel;
 import com.Java.Imobiliaria.apartamento.service.ApartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,32 +26,32 @@ public class ApartamentoController {
 
 
     @PostMapping("/criarApartamento")
-    public String criarApartamento(@RequestBody ApartamentoModel apartamentoModel) {
-        return apartamentoService.criarApartamento(apartamentoModel);
+        public String criarApartamento(@RequestBody ApartamentoDTO apartamentoDTO) {
+        return apartamentoService.criarApartamento(apartamentoDTO);
     }
 
     @PutMapping("/atualizarApartamentoPorId/{id}")
-    public String atualizarApartamentoPorId(@RequestBody @PathVariable Long id) {
-        return apartamentoService.atualizarApartamentoPorId(id, new ApartamentoModel());
+    public ApartamentoDTO atualizarApartamentoPorId(@RequestBody @PathVariable Long id) {
+        return apartamentoService.atualizarApartamentoPorId(id, new ApartamentoDTO());
     }
 
     @GetMapping("/listarApartamentos")
-    public List<ApartamentoModel> listarApartamentos() {
+    public List<ApartamentoDTO> listarApartamentos() {
         return apartamentoService.listarApartamento();
     }
 
     @GetMapping("/listarApartamentosPorId/{id}")
-    public ApartamentoModel listarApartamentosPorId(@PathVariable Long id) {
+    public ApartamentoDTO listarApartamentosPorId(@PathVariable Long id) {
         return apartamentoService.listarApartamentoPorId(id);
     }
 
     @GetMapping("/listarApartamentosQueAceitamPet/{aceitaPet}")
-    public List<ApartamentoModel> listarApartamentosQueAceitamPet(@PathVariable Boolean aceitaPet) {
+    public List<ApartamentoDTO> listarApartamentosQueAceitamPet(@PathVariable Boolean aceitaPet) {
         return apartamentoService.listarApartamentosQueAceitamPet(aceitaPet);
     }
 
     @GetMapping("/listarApartamentosPorValorAluguel")
-    public List<ApartamentoModel> listarApartamentosPorValorAluguel(@RequestParam  Integer valorAluguelMin, @RequestParam  Integer valorAluguelMax) {
+    public List<ApartamentoDTO> listarApartamentosPorValorAluguel(@RequestParam  Integer valorAluguelMin, @RequestParam  Integer valorAluguelMax) {
         return apartamentoService.listarApartamentosPorValorAluguel(valorAluguelMin, valorAluguelMax);
     }
 

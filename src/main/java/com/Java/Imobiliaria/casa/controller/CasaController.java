@@ -1,6 +1,7 @@
 package com.Java.Imobiliaria.casa.controller;
 
 
+import com.Java.Imobiliaria.casa.dto.CasaDTO;
 import com.Java.Imobiliaria.casa.model.CasaModel;
 import com.Java.Imobiliaria.casa.service.CasaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,22 +32,22 @@ public class CasaController {
     }
 
     @PostMapping("/criarCasa")
-    public String CriarCasa(@RequestBody CasaModel casaModel) {
-        return casaService.criarCasa();
+    public String CriarCasa(@RequestBody CasaDTO casaDTO) {
+        return casaService.criarCasa(casaDTO);
     }
 
     @PutMapping("/atualizarCasaPorId/{id}")
-    public String atualizarCasaPorId(@RequestBody @PathVariable Long id, CasaModel casaModel) {
-       return casaService.atualizarCasaPorId(id, casaModel);
+    public CasaDTO atualizarCasaPorId(@RequestBody @PathVariable Long id, CasaDTO casaDTO) {
+       return casaService.atualizarCasaPorId(id, casaDTO);
     }
 
     @GetMapping("/listarCasas")
-    public String listarCasas() {
-        return casaService.listarCasas().toString();
+    public List<CasaDTO> listarCasas() {
+        return casaService.listarCasas();
     }
 
     @GetMapping("/listarCasasPorValorAluguel")
-    public List<CasaModel> listarCasasPorValorAluguel(@RequestParam Integer valorAluguelMin, @RequestParam Integer valorAluguelMax) {
+    public List<CasaDTO> listarCasasPorValorAluguel(@RequestParam Integer valorAluguelMin, @RequestParam Integer valorAluguelMax) {
         return casaService.listarCasasPorValorAluguel(valorAluguelMin, valorAluguelMax);
     }
 

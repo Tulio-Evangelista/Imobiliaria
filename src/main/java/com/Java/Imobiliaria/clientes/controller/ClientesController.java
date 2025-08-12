@@ -3,6 +3,7 @@ package com.Java.Imobiliaria.clientes.controller;
 
 import com.Java.Imobiliaria.apartamento.enums.StatusApartamento;
 import com.Java.Imobiliaria.casa.enums.StatusCasa;
+import com.Java.Imobiliaria.clientes.dto.ClientesDTO;
 import com.Java.Imobiliaria.clientes.model.ClientesModel;
 import com.Java.Imobiliaria.clientes.service.ClientesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,18 @@ public class ClientesController {
     ClientesService clientesService;
 
     @GetMapping("/listarClientes")
-    public String listarClientes() {
-        return clientesService.listarClientes().toString();
+    public List<ClientesDTO> listarClientes() {
+        return clientesService.listarClientes();
     }
 
     @PostMapping("/cadastrarClientes")
-    public String cadastrarClientes() {
-        return clientesService.cadastrarClientes();
+    public String cadastrarClientes(ClientesDTO clientesDTO) {
+        return clientesService.cadastrarClientes(clientesDTO);
     }
 
     @PutMapping("/editarClientes/{id}")
-    public String editarClientes(@PathVariable Long id, ClientesModel clienteAtualizado) {
-        return clientesService.editarClientesPorId(id, clienteAtualizado);
+    public String editarClientes(@PathVariable Long id, ClientesDTO clientesDTO) {
+        return clientesService.editarClientesPorId(id, clientesDTO);
     }
 
     @DeleteMapping("/excluirClientes/{id}")
@@ -51,10 +52,10 @@ public class ClientesController {
     }
 
     @GetMapping("/listarClientesComImovelAlugado")
-    public List<ClientesModel> listarClientesComImovelAlugado(
+    public List<ClientesDTO> listarClientesComImovelAlugado(
             @RequestParam StatusApartamento statusApartamento,
             @RequestParam StatusCasa statusCasa) {
-        List<ClientesModel> clientes = clientesService.listarClientesComImovelAlugado(statusApartamento , statusCasa);
+        List<ClientesDTO> clientes = clientesService.listarClientesComImovelAlugado(statusApartamento , statusCasa);
         return clientes;
     }
 
