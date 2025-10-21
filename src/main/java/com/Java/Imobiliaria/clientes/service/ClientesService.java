@@ -60,14 +60,14 @@ public class ClientesService {
 
         if (clienteExistente.isPresent()) {
             ClientesModel clientesAtualizado = ClientesModel.builder()
-                    .id(id)  // define o mesmo ID para atualizar
+                    .id(id)
                     .nome(clientesDTO.getNome())
                     .cpf(clientesDTO.getCpf())
                     .telefone(clientesDTO.getTelefone())
                     .email(clientesDTO.getEmail())
                     .statusCliente(clientesDTO.getStatusCliente())
                     .password(clientesDTO.getPassword())
-                    .casasAlugadas(clienteExistente.get().getCasasAlugadas()) // preserva casas alugadas
+                    .casasAlugadas(clienteExistente.get().getCasasAlugadas())
                     .build();
 
             clientesRepository.save(clientesAtualizado);

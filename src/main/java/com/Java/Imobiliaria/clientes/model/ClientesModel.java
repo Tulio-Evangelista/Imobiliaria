@@ -5,15 +5,16 @@ import com.Java.Imobiliaria.clientes.enums.StatusCliente;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Entity(name = "tb_clientes")
-@Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ClientesModel {
 
     @Id
